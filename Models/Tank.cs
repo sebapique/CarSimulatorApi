@@ -1,15 +1,10 @@
 namespace CarSimulator.Models
 {
-    public class Tank
+    public class Tank(FuelType fuelType)
     {
-        public FuelType FuelType { get; private set; }
+        public FuelType FuelType { get; private set; } = fuelType;
 
-        public Tank(FuelType fuelType)
-        {
-            FuelType = fuelType;
-        }
-
-         public void Refuel(FuelType fuelType)
+        public void Refuel(FuelType fuelType)
         {
             FuelType = fuelType;
         }

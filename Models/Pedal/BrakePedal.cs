@@ -1,8 +1,7 @@
 namespace CarSimulator.Models
 {
-    public class BrakePedal : Pedal
+    public class BrakePedal(Engine engine) : Pedal(engine)
     {
-        public BrakePedal(Engine engine) : base(engine) {}
         public override int Press()
         {
             int decrement = Engine.Type switch

@@ -1,9 +1,7 @@
 namespace CarSimulator.Models
 {
-    public class AcceleratorPedal : Pedal
+    public class AcceleratorPedal(Engine engine) : Pedal(engine)
     {
-        public AcceleratorPedal(Engine engine) : base(engine) {}
-
         public override int Press()
         {
             int increment = Engine.Type switch

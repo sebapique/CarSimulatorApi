@@ -1,12 +1,9 @@
 namespace CarSimulator.Models
 {
-    public abstract class Pedal
+    public abstract class Pedal(Engine engine)
     {
-        protected  Engine Engine;
-        public Pedal(Engine engine)
-        {
-            Engine = engine;
-        }
+        protected  Engine Engine = engine;
+
         public abstract int Press();
     }
 }

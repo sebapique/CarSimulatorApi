@@ -6,7 +6,7 @@ namespace CarSimulator.Models
         public CarColor Color { get; private set; }
         private static readonly CarColor[] CarColors = (CarColor[]) Enum.GetValues(typeof(CarColor));
         public Body(CarType type) {
-            Random random = new Random();
+            Random random = new();
             Type = type;
             Color = CarColors[random.Next(CarColors.Length)];
         }

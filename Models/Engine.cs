@@ -1,12 +1,8 @@
 using CarSimulator.Services;
 namespace CarSimulator.Models
 {
-    public class Engine
+    public class Engine(CarType type)
     {
-        public CarType Type { get; private set; }
-
-        public Engine(CarType type) {
-            Type = type;
-        }
+        public CarType Type { get; private set; } = type;
     }
 }

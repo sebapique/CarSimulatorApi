@@ -7,13 +7,13 @@ namespace CarSimulator.Models
     {
         public int Speed { get; private set; }
         public CarType Type { get; private set; }
-        private Body Body;
-        private Tank Tank;
-        private Engine Engine;
+        private readonly Body Body;
+        private readonly Tank Tank;
+        private readonly Engine Engine;
         private AcceleratorPedal AcceleratorPedal;
-        private BrakePedal BrakePedal;
-        private SteeringWheel SteeringWheel;
-        private IHonkDevice HonkDevice;
+        private readonly BrakePedal BrakePedal;
+        private readonly SteeringWheel SteeringWheel;
+        private readonly IHonkDevice HonkDevice;
         private static readonly CarType[] CarTypes = (CarType[]) Enum.GetValues(typeof(CarType));
     
         public Car()
@@ -36,7 +36,7 @@ namespace CarSimulator.Models
         public void Accelerate()
         {
             int increment = 0;
-            if (Tank.FuelType == FuelType.Premium && Body.Type != CarType.Truck)
+            if (Tank.FuelType == FuelType.Premium && Type != CarType.Truck)
             {
                 increment += 1;
             }
@@ -70,13 +70,13 @@ namespace CarSimulator.Models
             if (Body.Type.ToString() == "truck") {
                 return new Trumpet();
             } else {
-                Random random = new Random();
+                Random random = new();
                 return random.Next(10) < 9 ? (IHonkDevice)new Horn() : (IHonkDevice)new Trumpet();
             }
         }
 
         private CarType genterateType() {
-            Random random = new Random();
+            Random random = new();
             return CarTypes[random.Next(CarTypes.Length)];
         }
     }

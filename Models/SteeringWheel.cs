@@ -3,7 +3,7 @@ namespace CarSimulator.Models
     public class SteeringWheel
     {
         public int Direction { get; private set; }
-        private List<Wheel> Wheels;
+        private readonly List<Wheel> Wheels;
 
         public SteeringWheel() {
             Wheels = new List<Wheel>();
@@ -22,7 +22,7 @@ namespace CarSimulator.Models
             {
                 Direction = (Direction + degrees) % 360;
             }
-            moveWheels();
+            MoveWheels();
         }
         private void CreateWheels()
         {
@@ -34,7 +34,7 @@ namespace CarSimulator.Models
             }
         }
 
-        private void moveWheels() {
+        private void MoveWheels() {
             foreach (Wheel wheel in Wheels)
             {
                 if (!wheel.Locked) {
