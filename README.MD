@@ -1,8 +1,6 @@
 # CarSimulatorApi
-This is a .NET 8.0 project written in C#. This README provides instructions on how to set up and run the project.
 
 ## Prerequisites
-
 Before running the project, ensure you have the following installed:
 
 ### .NET SDK 8.0
@@ -16,7 +14,7 @@ This project uses C# 12.0 features. C# 12.0 is the default language version for 
 Clone the repository to your local machine using Git.
 
 ```bash
-git clone https://github.com/your-repo/project-name.git
+git clone https://github.com/sebapique/CarSimulatorAp.git
 cd CarSimulatrApi
 ```
 
